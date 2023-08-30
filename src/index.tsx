@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 import "./Style.css";
+// Escolher qual caminho de exercício deseja importar.
+import App from "./0001-Inferencia-e-props/App";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

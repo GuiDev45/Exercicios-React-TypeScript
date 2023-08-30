@@ -1,0 +1,2 @@
+Exercício 1: Componente de Contador
+Crie um componente de contador simples usando React e TypeScript. O componente deve exibir um número e botões "Incrementar" e "Decrementar" que ajustam esse número.
