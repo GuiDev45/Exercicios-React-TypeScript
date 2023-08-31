@@ -1,9 +1,10 @@
 import "../Style.css";
+import Lista from "./Lista";
 
 function App() {
   return (
     <div>
-      <h1>App</h1>
+      <Lista />
     </div>
   );
 }
