@@ -2,7 +2,7 @@ export default function TodoList() {
   return (
     <>
       <h1>Spider Man!</h1>
-      <img src="spier-man-01.JPG" alt="Picture Spider man" className="photo" />
+      <img src="spider-man-01.JPG" alt="Picture Spider man" className="photo" />
       <ul>
         <li>Superpoderes Aracnídeos</li>
         <li>Identidade Dupla</li>

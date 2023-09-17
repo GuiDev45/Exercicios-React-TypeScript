@@ -4,7 +4,7 @@ function Profile() {
   return (
     <img
       className={style.avatar}
-      src="spier-man-01.JPG"
+      src="spider-man-01.JPG"
       alt="Spider-man Picture"
     />
   );
