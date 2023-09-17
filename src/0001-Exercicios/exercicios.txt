@@ -1,0 +1,103 @@
+1) Crie um componente de botão simples em React com TypeScript.
+
+2) Adicione um evento de clique ao botão que exibe um alerta.
+
+3) Crie um componente de caixa de texto controlada em React com TypeScript.
+
+4) Adicione um estado ao componente de caixa de texto e exiba seu valor.
+
+5) Crie um componente de lista em React com TypeScript.
+
+6) Passe uma matriz de dados para o componente de lista e exiba-os.
+
+7) Crie um componente de contador em React com TypeScript.
+
+8) Adicione botões de incremento e decremento ao contador.
+
+9) Atualize o estado do contador quando os botões são clicados.
+
+10) Crie um componente de formulário em React com TypeScript.
+
+11) Adicione campos de entrada de texto ao formulário.
+
+12) Crie um estado para cada campo de entrada e exiba seus valores.
+
+13) Crie um componente de checkbox em React com TypeScript.
+
+14) Adicione um estado para a checkbox e atualize-o quando a checkbox for marcada ou desmarcada.
+
+15) Crie um componente de radio button em React com TypeScript.
+
+16) Crie um grupo de radio buttons e mantenha o estado do grupo.
+
+17) Crie um componente de seleção (dropdown) em React com TypeScript.
+
+18) Preencha a seleção com opções e atualize o estado com a opção selecionada.
+
+19) Crie um componente de lista de tarefas em React com TypeScript.
+
+20) Permita adicionar novas tarefas à lista.
+
+21) Permita marcar tarefas como concluídas.
+
+22) Crie um componente de temporizador em React com TypeScript.
+
+23) Permita iniciar, pausar e zerar o temporizador.
+
+24) Exiba o tempo decorrido.
+
+25) Crie um componente de relógio digital em React com TypeScript.
+
+26) Atualize o relógio a cada segundo.
+
+27) Crie um componente de calculadora em React com TypeScript.
+
+28) Adicione botões numéricos e operadores à calculadora.
+
+29) Permita calcular o resultado das expressões.
+
+30) Crie um componente de lista de compras em React com TypeScript.
+
+31) Adicione itens à lista e exiba-os.
+
+32) Permita remover itens da lista.
+
+33) Crie um componente de cronômetro em React com TypeScript.
+
+34) Permita configurar um tempo e iniciar a contagem regressiva.
+
+35) Exiba o tempo restante.
+
+36) Crie um componente de contador de caracteres em React com TypeScript.
+
+37) Permita inserir texto em um campo de entrada e conte os caracteres.
+
+38) Limite o número máximo de caracteres permitidos.
+
+39) Crie um componente de barra de progresso em React com TypeScript.
+
+40) Atualize a barra de progresso com base em um valor.
+
+41) Crie um componente de exibição de imagem em React com TypeScript.
+
+42) Permita fazer o upload de uma imagem e exibi-la.
+
+43) Crie um componente de galeria de imagens em React com TypeScript.
+
+44) Adicione várias imagens à galeria e permita visualizá-las em tamanho grande.
+
+45) Crie um componente de lista de contatos em React com TypeScript.
+
+46) Adicione contatos à lista com nome e número de telefone.
+
+47) Permita editar e excluir contatos.
+
+48) Crie um componente de relatório de despesas em React com TypeScript.
+
+49) Adicione despesas com descrição e valor.
+
+50) Calcule o total das despesas e exiba-o.
+
+----------------------------------------------------------------------------------------
+
+Esses exercícios devem ajudá-lo a praticar o uso de componentes com React e TypeScript, cobrindo uma variedade de cenários comuns. Você pode começar com os exercícios mais simples e progredir para os mais complexos à medida que ganha confiança em suas habilidades.

@@ -1,2 +1,0 @@
-Exercício 2: Lista de Tarefas
-Crie um componente que permita adicionar e listar tarefas. Use um array para armazenar as tarefas e utilize inferência de tipos para garantir que as tarefas sejam tratadas corretamente.
