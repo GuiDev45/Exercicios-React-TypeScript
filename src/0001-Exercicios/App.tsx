@@ -1,7 +1,11 @@
+import Botao from "./Components/Botao";
+import Input from "./Components/Input";
+
 function App() {
   return (
     <>
-      <h1>Olá Mundo</h1>
+      <Botao />
+      <Input />
     </>
   );
 }
