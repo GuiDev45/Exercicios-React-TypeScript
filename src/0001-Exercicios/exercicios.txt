@@ -1,10 +1,10 @@
-1) Crie um componente de botão simples em React com TypeScript.
+1) Crie um componente de botão simples em React com TypeScript. [X]
 
-2) Adicione um evento de clique ao botão que exibe um alerta.
+2) Adicione um evento de clique ao botão que exibe um alerta. [X]
 
-3) Crie um componente de caixa de texto controlada em React com TypeScript.
+3) Crie um componente de caixa de texto controlada em React com TypeScript. [X]
 
-4) Adicione um estado ao componente de caixa de texto e exiba seu valor.
+4) Adicione um estado ao componente de caixa de texto e exiba seu valor. [X]
 
 5) Crie um componente de lista em React com TypeScript.
 
