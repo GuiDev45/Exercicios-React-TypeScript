@@ -16,6 +16,7 @@ Agora, se <Avatar person={...} />for renderizado sem size prop, size será defin
 */
 
 // Esta sintaxe é chamada de “desestruturação” e equivale à leitura de propriedades de um parâmetro de função:
+// Normalmente você não precisa do propsobjeto inteiro, então você o desestrutura em adereços individuais.
 export default function Avatar({ person, size }: avatarProps) {
   return (
     <img
