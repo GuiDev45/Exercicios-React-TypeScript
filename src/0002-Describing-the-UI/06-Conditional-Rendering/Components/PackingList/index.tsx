@@ -11,7 +11,16 @@ Observe como você está criando lógica de ramificação com JavaScript ife ret
 Com o ternario fica mais facil manutenção, pois não preciso nesse caso declarar a className 2x
 */
 function Item({ name, isPacked }: ItemProps) {
-  return <li className="item">{isPacked ? name + " ✔" : name}</li>;
+  return (
+    <li className="item">
+      {isPacked ? name + " ✔" : name}
+      {/* isPacked, then ( &&) renderiza a marca de seleção, caso contrário, não renderiza nada” .
+
+      Uma expressão JavaScript && retorna o valor do seu lado direito (no nosso caso, a marca de seleção) se o lado esquerdo (nossa condição) for true. Mas se a condição for false, toda a expressão se tornará false. O React considera falseum “buraco” na árvore JSX, assim como nullou undefined, e não renderiza nada em seu lugar.
+      */}
+      {isPacked && "X"}
+    </li>
+  );
 }
 /*
   if (isPacked) {
@@ -44,3 +53,14 @@ export default function PackingList() {
     </section>
   );
 }
+
+/*
+Armadilha
+Não coloque números no lado esquerdo de &&.
+
+Para testar a condição, o JavaScript converte o lado esquerdo em booleano automaticamente. No entanto, se o lado esquerdo for 0, então toda a expressão obtém esse valor ( 0) e o React será renderizado com prazer, 0em vez de nada.
+
+Por exemplo, um erro comum é escrever código como messageCount && <p>New messages</p>. É fácil presumir que ele não renderiza nada quando messageCountis 0, mas na verdade renderiza a 0si mesmo!
+
+Para corrigir isso, torne o lado esquerdo um booleano: messageCount > 0 && <p>New messages</p>.
+*/
