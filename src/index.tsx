@@ -9,7 +9,8 @@ import "./Style.css";
 // import App from "./0002-Describing-the-UI/04-JavaScript-in-JSX-with-Curly-Braces/App";
 // import App from "./0002-Describing-the-UI/05-Passing-Props-to-a-Component/App";
 // import App from "./0002-Describing-the-UI/06-Conditional-Rendering/App";
-import App from "./0002-Describing-the-UI/07-Rendering-Lists/App";
+// import App from "./0002-Describing-the-UI/07-Rendering-Lists/App";
+import App from "./0002-Describing-the-UI/08-Keeping-Components-Pure/App";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
