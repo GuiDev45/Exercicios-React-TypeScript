@@ -21,7 +21,7 @@ A API JSON retorna alguns dados semelhantes a estes:
 ]
 
 A maquete fica assim:
-URL DA MAQUETE
+https://github.com/GuiDev45/Exercicios-React-TypeScript/blob/master/prints/maquete.png
 
 IMPORTANTE: Para implementar uma UI no React, você normalmente seguirá as mesmas cinco etapas.
 
@@ -45,7 +45,7 @@ Quando estamos aprendendo programação orientada a objetos, sem sabermos, damos
 Se o seu JSON estiver bem estruturado, muitas vezes você descobrirá que ele mapeia naturalmente para a estrutura do componente da sua UI. Isso ocorre porque os modelos de UI e de dados geralmente têm a mesma arquitetura de informações, ou seja, o mesmo formato. Separe sua UI em componentes, onde cada componente corresponde a uma parte do seu modelo de dados.
 
 Existem cinco componentes nesta tela:
-URL DA MAQUETE-COMPONENTS
+https://github.com/GuiDev45/Exercicios-React-TypeScript/blob/master/prints/maquete-components.png
 
 1 - FilterableProductTable(cinza) contém o aplicativo inteiro.
 2 - SearchBar(azul) recebe a entrada do usuário.
