@@ -71,3 +71,9 @@ Para criar uma versão estática do seu aplicativo que renderize seu modelo de d
         
 Você pode construir “de cima para baixo”, começando com a construção dos componentes mais acima na hierarquia (como FilterableProductTable) ou “de baixo para cima”, trabalhando a partir dos componentes mais abaixo (como ProductRow). Em exemplos mais simples, geralmente é mais fácil ir de cima para baixo e, em projetos maiores, é mais fácil ir de baixo para cima.
 
+Após construir seus componentes, você terá uma biblioteca de componentes reutilizáveis ​​que renderizam seu modelo de dados. Por se tratar de um aplicativo estático, os componentes retornarão apenas JSX. O componente no topo da hierarquia ( FilterableProductTable) usará seu modelo de dados como suporte. Isso é chamado de fluxo de dados unidirecional porque os dados fluem do componente de nível superior para aqueles na parte inferior da árvore.
+
+- Armadilha
+Neste ponto, você não deve usar nenhum valor de estado. Isso fica para o próximo passo!
+
+---Etapa 3: Encontre a representação mínima, mas completa, do estado da IU---
