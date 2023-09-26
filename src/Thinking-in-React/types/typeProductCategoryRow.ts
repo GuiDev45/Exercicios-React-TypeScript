@@ -1,0 +1,3 @@
+type TProductCategoryRow = {
+  category: string;
+};

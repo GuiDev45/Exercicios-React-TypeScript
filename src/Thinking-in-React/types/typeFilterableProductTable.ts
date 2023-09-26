@@ -1,0 +1,3 @@
+type TFilterableProductTable = {
+  products: TProduct[];
+};

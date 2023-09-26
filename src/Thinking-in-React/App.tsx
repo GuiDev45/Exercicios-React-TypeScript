@@ -1,15 +1,6 @@
-interface Product {
-  category: string;
-  price: string;
-  stocked: boolean;
-  name: string;
-}
+import { PRODUCTS } from "./data/PRODUCTS";
 
-interface ProductCategoryRowProps {
-  category: string;
-}
-
-function ProductCategoryRow({ category }: ProductCategoryRowProps) {
+function ProductCategoryRow({ category }: TProductCategoryRow) {
   return (
     <tr>
       <th colSpan={2}>{category}</th>
@@ -17,11 +8,7 @@ function ProductCategoryRow({ category }: ProductCategoryRowProps) {
   );
 }
 
-interface ProductRowProps {
-  product: Product;
-}
-
-function ProductRow({ product }: ProductRowProps) {
+function ProductRow({ product }: TProductRow) {
   const name = product.stocked ? (
     product.name
   ) : (
@@ -35,10 +22,6 @@ function ProductRow({ product }: ProductRowProps) {
   );
 }
 
-interface ProductTableProps {
-  products: Product[];
-}
-
 function SearchBar() {
   return (
     <form>
@@ -50,7 +33,7 @@ function SearchBar() {
   );
 }
 
-function ProductTable({ products }: ProductTableProps) {
+function ProductTable({ products }: TProductTable) {
   const rows: JSX.Element[] = [];
   let lastCategory: string | null = null;
 
@@ -79,11 +62,7 @@ function ProductTable({ products }: ProductTableProps) {
   );
 }
 
-interface FilterableProductTableProps {
-  products: Product[];
-}
-
-function FilterableProductTable({ products }: FilterableProductTableProps) {
+function FilterableProductTable({ products }: TFilterableProductTable) {
   return (
     <div>
       <SearchBar />
@@ -92,22 +71,6 @@ function FilterableProductTable({ products }: FilterableProductTableProps) {
   );
 }
 
-const PRODUCTS: Product[] = [
-  { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
-  { category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit" },
-  { category: "Fruits", price: "$2", stocked: false, name: "Passionfruit" },
-  { category: "Vegetables", price: "$2", stocked: true, name: "Spinach" },
-  { category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin" },
-  { category: "Vegetables", price: "$1", stocked: true, name: "Peas" },
-];
-
 export default function App() {
   return <FilterableProductTable products={PRODUCTS} />;
 }
-
-/*
-os componentes retornarão apenas JSX. O componente no topo da hierarquia ( FilterableProductTable) usará seu modelo de dados como suporte. Isso é chamado de fluxo de dados unidirecional porque os dados fluem do componente de nível superior para aqueles na parte inferior da árvore.
-
-Armadilha
-Neste ponto, você não deve usar nenhum valor de estado. Isso fica para o próximo passo!
-*/
