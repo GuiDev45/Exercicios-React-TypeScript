@@ -77,3 +77,38 @@ Após construir seus componentes, você terá uma biblioteca de componentes reut
 Neste ponto, você não deve usar nenhum valor de estado. Isso fica para o próximo passo!
 
 ---Etapa 3: Encontre a representação mínima, mas completa, do estado da IU---
+
+Para tornar a IU interativa, você precisa permitir que os usuários alterem seu data model. Você usará o estado/state para isso.
+
+Pense no estado como o conjunto mínimo de dados variáveis ​​que seu aplicativo precisa lembrar. O princípio mais importante para estruturar o estado é mantê-lo SECO (Não se repita). Descubra a representação mínima absoluta do estado que seu aplicativo precisa e calcule todo o resto sob demanda. Por exemplo, se você estiver criando uma lista de compras, poderá armazenar os itens como uma matriz no estado. Se você quiser exibir também o número de itens na lista, não armazene o número de itens como outro valor de estado; em vez disso, leia o comprimento do seu array.
+
+Agora pense em todos os dados deste aplicativo de exemplo:
+
+1) A lista original de produtos
+2) O texto de pesquisa que o usuário inseriu
+3) O valor da caixa de seleção
+4) A lista filtrada de produtos
+
+Quais destes são estaduais? Identifique aqueles que não são:
+
+- Permanece inalterado ao longo do tempo? Se sim, não é estatal.
+- É transmitido de um pai por meio de Props? Se sim, não é estatal.
+- Você pode calculá-lo com base no estado/state ou Props existentes em seu componente? Se sim, definitivamente não é estado!
+
+O que resta provavelmente é o estado.
+
+1) A lista original de produtos é passada como Props, portanto não é um estado.
+2) O texto de pesquisa parece ser um estado, pois muda com o tempo e não pode ser calculado a partir de nada.
+3) O valor da caixa de seleção parece ser um estado, pois muda com o tempo e não pode ser calculado a partir de nada.
+4) A lista filtrada de produtos não é um estado porque pode ser calculada pegando a lista original de produtos e filtrando-a de acordo com o texto de pesquisa e o valor da caixa de seleção.
+
+Isso significa que apenas o texto da pesquisa e o valor da caixa de seleção são estados! Bem feito!
+
+*MERGULHO PROFUNDO*
+Props vs Estado
+
+- Props são como argumentos que você passa para uma função. Eles permitem que um componente pai passe dados para um componente filho e personalize sua aparência. Por exemplo, aFormpode passar umacolorpropriedade para aButton.
+
+- O estado é como a memória de um componente. Ele permite que um componente acompanhe algumas informações e as altere em resposta às interações. Por exemplo, aButtonpode acompanhar oisHoveredestado.
+
+Props e estado são diferentes, mas funcionam juntos. Um componente pai geralmente manterá algumas informações no estado (para que possa alterá-las) e as transmitirá aos componentes filhos como seus Props. Não há problema se a diferença ainda parecer confusa na primeira leitura. É preciso um pouco de prática para realmente pegar!
