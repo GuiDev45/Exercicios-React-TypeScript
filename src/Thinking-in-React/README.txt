@@ -158,3 +158,7 @@ Então, passe filterTexte inStockOnly para ProductTable e SearchBar como props:
 
 Você pode começar a ver como seu aplicativo se comportará. Edite o filterText valor inicial de useState('')para useState('fruit') no código.
 Você verá o texto de entrada da pesquisa e a atualização da tabela:  
+
+No entanto, você ainda não adicionou nenhum código para responder às ações do usuário, como digitação. Esta será sua etapa final.
+
+---Etapa 5: adicionar fluxo de dados inverso---

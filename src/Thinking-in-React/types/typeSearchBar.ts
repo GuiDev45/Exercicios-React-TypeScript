@@ -1,5 +1,4 @@
-type TProductTable = {
-  products: TProduct[];
+type TSearchBar = {
   filterText: string;
   inStockOnly: boolean;
 };
