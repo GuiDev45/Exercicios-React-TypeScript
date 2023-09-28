@@ -114,3 +114,47 @@ Props vs Estado
 Props e estado são diferentes, mas funcionam juntos. Um componente pai geralmente manterá algumas informações no estado (para que possa alterá-las) e as transmitirá aos componentes filhos como seus Props. Não há problema se a diferença ainda parecer confusa na primeira leitura. É preciso um pouco de prática para realmente pegar!
 
 ---Etapa 4: Identifique onde seu estado deveria morar---
+
+Depois de identificar os dados de estado mínimo do seu aplicativo, você precisa identificar qual componente é responsável por alterar esse estado ou é o proprietário do estado. Lembre-se: o React usa fluxo de dados unidirecional, passando os dados pela hierarquia de componentes do componente pai para o componente filho. Pode não ficar imediatamente claro qual componente deve possuir qual estado. Isso pode ser um desafio se você for novo nesse conceito, mas você pode descobrir seguindo estas etapas!
+
+Para cada parte do estado em seu aplicativo:
+
+1) Identifique cada componente que renderiza algo com base nesse estado.
+2) Encontre o componente pai comum mais próximo – um componente acima de todos eles na hierarquia.
+3) Decida onde o estado deve morar:
+  1) Freqüentemente, você pode colocar o estado diretamente no pai comum.
+  2) Você também pode colocar o estado em algum componente acima do pai comum.
+  3) Se você não conseguir encontrar um componente onde faça sentido possuir o estado, crie um novo componente exclusivamente para manter o estado e adicione-o em algum lugar na hierarquia acima do componente pai comum.
+
+Na etapa anterior, você encontrou dois estados neste aplicativo: o texto de entrada da pesquisa e o valor da caixa de seleção. Neste exemplo, eles aparecem sempre juntos, por isso faz sentido colocá-los no mesmo lugar.
+
+Agora vamos analisar nossa estratégia para eles:
+
+1) Identifique os componentes que usam estado:
+  - ProductTable precisa filtrar a lista de produtos com base nesse estado (texto de pesquisa e valor da caixa de seleção).
+  - SearchBar precisa exibir esse estado (texto de pesquisa e valor da caixa de seleção).
+2) Encontre seu pai comum: o primeiro componente pai que ambos os componentes compartilham é FilterableProductTable.
+3) Decida onde fica o estado : manteremos o texto do filtro e os valores de estado verificados em FilterableProductTable.
+
+Portanto, os valores do estado permanecerão em FilterableProductTable.
+
+Adicione estado ao componente com o useState()Hook. Ganchos são funções especiais que permitem “conectar-se” ao React. Adicione duas variáveis ​​de estado no topo FilterableProductTable e especifique seu estado inicial:
+
+function FilterableProductTable({ products }) {
+  const [filterText, setFilterText] = useState('');
+  const [inStockOnly, setInStockOnly] = useState(false);
+
+Então, passe filterTexte inStockOnly para ProductTable e SearchBar como props:
+
+<div>
+  <SearchBar 
+    filterText={filterText} 
+    inStockOnly={inStockOnly} />
+  <ProductTable 
+    products={products}
+    filterText={filterText}
+    inStockOnly={inStockOnly} />
+</div>
+
+Você pode começar a ver como seu aplicativo se comportará. Edite o filterText valor inicial de useState('')para useState('fruit') no código.
+Você verá o texto de entrada da pesquisa e a atualização da tabela:  
