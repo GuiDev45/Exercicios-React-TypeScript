@@ -112,3 +112,5 @@ Props vs Estado
 - O estado é como a memória de um componente. Ele permite que um componente acompanhe algumas informações e as altere em resposta às interações. Por exemplo, aButtonpode acompanhar oisHoveredestado.
 
 Props e estado são diferentes, mas funcionam juntos. Um componente pai geralmente manterá algumas informações no estado (para que possa alterá-las) e as transmitirá aos componentes filhos como seus Props. Não há problema se a diferença ainda parecer confusa na primeira leitura. É preciso um pouco de prática para realmente pegar!
+
+---Etapa 4: Identifique onde seu estado deveria morar---
