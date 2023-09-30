@@ -143,21 +143,25 @@ Portanto, os valores do estado permanecerão em FilterableProductTable.
 
 Adicione estado ao componente com o useState()Hook. Ganchos são funções especiais que permitem “conectar-se” ao React. Adicione duas variáveis ​​de estado no topo de FilterableProductTable e especifique seu estado inicial:
 
+```bash
 function FilterableProductTable({ products }) {
 const [filterText, setFilterText] = useState('');
 const [inStockOnly, setInStockOnly] = useState(false);
+```
 
 ### Então, passe filterTexte inStockOnly para ProductTable e SearchBar como props:
 
+```bash
 <div>
-  <SearchBar 
-    filterText={filterText} 
+  <SearchBar
+    filterText={filterText}
     inStockOnly={inStockOnly} />
-  <ProductTable 
+  <ProductTable
     products={products}
     filterText={filterText}
     inStockOnly={inStockOnly} />
 </div>
+```
 
 Você pode começar a ver como seu aplicativo se comportará. Edite o filterText valor inicial de useState('')para useState('fruit') no código.
 Você verá o texto de entrada da pesquisa e a atualização da tabela:
@@ -172,6 +176,7 @@ O React torna esse fluxo de dados explícito, mas requer um pouco mais de digita
 
 Você deseja que sempre que o usuário alterar as entradas do formulário, o estado seja atualizado para refletir essas alterações. O estado é propriedade de `FilterableProductTable`, portanto, só ele pode ligar `setFilterText` e `setInStockOnly`. Para permitir que `SearchBar` atualize o estado de `FilterableProductTable`, você precisa passar essas funções para `SearchBar`:
 
+```bash
 function FilterableProductTable({ products }) {
 const [filterText, setFilterText] = useState(''); // Aqui
 const [inStockOnly, setInStockOnly] = useState(false); // Aqui
@@ -183,13 +188,16 @@ filterText={filterText}
 inStockOnly={inStockOnly}
 onFilterTextChange={setFilterText} // Aqui
 onInStockOnlyChange={setInStockOnly} /> // Aqui
+```
 
 ### Dentro do SearchBar, você adicionará os onChange manipuladores de eventos e definirá o estado pai deles:
 
+```bash
 <input
 type="text"
 value={filterText}
 placeholder="Search..."
 onChange={(e) => onFilterTextChange(e.target.value)} /> // Aqui
+```
 
 Agora o aplicativo funciona totalmente!
