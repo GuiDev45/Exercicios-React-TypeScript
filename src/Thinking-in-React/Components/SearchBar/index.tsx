@@ -1,10 +1,24 @@
-export default function SearchBar({ filterText, inStockOnly }: TSearchBar) {
+export default function SearchBar({
+  filterText,
+  inStockOnly,
+  onFilterTextChange,
+  onInStockOnlyChange,
+}: TSearchBar) {
   return (
     <form>
-      <input type="text" value={filterText} placeholder="Search..." />
+      <input
+        type="text"
+        value={filterText}
+        placeholder="Search..."
+        onChange={(e) => onFilterTextChange(e.target.value)}
+      />
       <label>
-        <input type="checkbox" checked={inStockOnly} /> Only show products in
-        stock
+        <input
+          type="checkbox"
+          checked={inStockOnly}
+          onChange={(e) => onInStockOnlyChange(e.target.checked)}
+        />{" "}
+        Only show products in stock
       </label>
     </form>
   );
