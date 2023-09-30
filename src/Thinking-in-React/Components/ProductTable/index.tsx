@@ -6,27 +6,27 @@ export default function ProductTable({
   filterText,
   inStockOnly,
 }: TProductTable) {
-  const rows: JSX.Element[] = [];
-  let lastCategory: string | null = null;
+  const filteredProducts = products.filter(
+    (product) =>
+      product.name.toLowerCase().includes(filterText.toLowerCase()) &&
+      (!inStockOnly || (inStockOnly && product.stocked)),
+  );
 
-  products.forEach((product) => {
-    if (product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
-      return;
-    }
-    if (inStockOnly && !product.stocked) {
-      return;
-    }
-    if (product.category !== lastCategory) {
-      rows.push(
-        <ProductCategoryRow
-          category={product.category}
-          key={product.category}
-        />,
-      );
-    }
-    rows.push(<ProductRow product={product} key={product.name} />);
-    lastCategory = product.category;
-  });
+  const rows = filteredProducts.reduce<JSX.Element[]>(
+    (acc, product, index, array) => {
+      if (index === 0 || product.category !== array[index - 1].category) {
+        acc.push(
+          <ProductCategoryRow
+            category={product.category}
+            key={product.category}
+          />,
+        );
+      }
+      acc.push(<ProductRow product={product} key={product.name} />);
+      return acc;
+    },
+    [],
+  );
 
   return (
     <table>
