@@ -162,3 +162,31 @@ Você verá o texto de entrada da pesquisa e a atualização da tabela:
 No entanto, você ainda não adicionou nenhum código para responder às ações do usuário, como digitação. Esta será sua etapa final.
 
 ---Etapa 5: adicionar fluxo de dados inverso---
+
+Atualmente, seu aplicativo é renderizado corretamente com adereços e estados descendo na hierarquia. Mas para alterar o estado de acordo com a entrada do usuário, você precisará oferecer suporte ao fluxo de dados no sentido contrário: os componentes do formulário na hierarquia precisam atualizar o estado no FilterableProductTable.
+
+O React torna esse fluxo de dados explícito, mas requer um pouco mais de digitação do que a ligação de dados bidirecional. Se você tentar digitar ou marcar a caixa no exemplo acima, verá que o React ignora sua entrada. Isso é intencional. Ao escrever <input value={filterText} />, você definiu a value propriedade the input para ser sempre igual ao filterText estado passado de FilterableProductTable. Como filterText estado nunca é definido, a entrada nunca muda.
+
+Você deseja que sempre que o usuário alterar as entradas do formulário, o estado seja atualizado para refletir essas alterações. O estado é propriedade de FilterableProductTable, portanto só ele pode ligar setFilterText e setInStockOnly. Para permitir SearchBar a atualização do FilterableProductTable estado do, você precisa passar essas funções para SearchBar:
+
+function FilterableProductTable({ products }) {
+  const [filterText, setFilterText] = useState(''); // Aqui
+  const [inStockOnly, setInStockOnly] = useState(false); // Aqui
+
+  return (
+    <div>
+      <SearchBar 
+        filterText={filterText} 
+        inStockOnly={inStockOnly}
+        onFilterTextChange={setFilterText} // Aqui
+        onInStockOnlyChange={setInStockOnly} /> // Aqui
+
+Dentro do SearchBar, você adicionará os onChange manipuladores de eventos e definirá o estado pai deles:
+
+<input 
+  type="text" 
+  value={filterText} 
+  placeholder="Search..." 
+  onChange={(e) => onFilterTextChange(e.target.value)} /> // Aqui
+
+  Agora o aplicativo funciona totalmente!
