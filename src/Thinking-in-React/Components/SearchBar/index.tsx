@@ -13,6 +13,7 @@ export default function SearchBar({
         onChange={(e) => onFilterTextChange(e.target.value)}
       />
       <label>
+        <br />
         <input
           type="checkbox"
           checked={inStockOnly}
@@ -20,6 +21,8 @@ export default function SearchBar({
         />{" "}
         Only show products in stock
       </label>
+
+      <br />
     </form>
   );
 }
