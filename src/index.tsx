@@ -12,7 +12,8 @@ import "./Style.css";
 // import App from "./0002-Describing-the-UI/07-Rendering-Lists/App";
 // import App from "./0002-Describing-the-UI/08-Keeping-Components-Pure/App";
 // import App from "./0003-Adding-Interactivity/01-Responding-to-Events/App";
-import App from "./Thinking-in-React/App";
+// import App from "./Thinking-in-React/App";
+import App from "./01-Exercicios/0002-exercicio/App";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
