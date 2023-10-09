@@ -34,6 +34,14 @@ const schemaForm = z
 // Com isso o typescript já entende que eu tenho todas as tipagens do schema
 type FormProps = z.infer<typeof schemaForm>;
 
+type AddressProps = {
+  bairro: string;
+  complemento: string;
+  uf: string;
+  logradouro: string;
+  localidade: string;
+};
+
 export default function Cep() {
   const {
     handleSubmit,
@@ -66,12 +74,27 @@ export default function Cep() {
     console.log(data);
   };
 
+  const handleSetData = useCallback(
+    (data: AddressProps) => {
+      setValue("address.city", data.localidade);
+      setValue("address.street", data.logradouro);
+      setValue("address.state", data.uf);
+      setValue("address.district", data.bairro);
+      setValue("address.complement", data.complemento);
+    },
+    [setValue],
+  );
+
   // Fazendo a requisição da API viaCep
-  const handleFetchAddress = useCallback(async (zipCode: string) => {
-    const { data } = await axios.get(
-      `https://viacep.com.br/ws/${zipCode}/json/`,
-    );
-  }, []);
+  const handleFetchAddress = useCallback(
+    async (zipCode: string) => {
+      const { data } = await axios.get(
+        `https://viacep.com.br/ws/${zipCode}/json/`,
+      );
+      handleSetData(data);
+    },
+    [handleSetData],
+  );
 
   console.log(errors);
 
