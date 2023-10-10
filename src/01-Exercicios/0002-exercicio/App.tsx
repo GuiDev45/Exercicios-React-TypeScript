@@ -28,7 +28,7 @@ function Input({ value, onChange }: TInput) {
   );
 }
 
-function AddTarefa() {
+function ListaDeTarefas() {
   const [tarefa, setTarefa] = useState("");
   const [tarefas, setTarefas] = useState<string[]>([]);
 
@@ -42,6 +42,12 @@ function AddTarefa() {
     }
   };
 
+  const removeTarefa = (index: number) => {
+    // Uma nova lista de tarefas que exclui a tarefa no índice atual
+    const novaListaTarefas = tarefas.filter((_, i) => i !== index);
+    setTarefas(novaListaTarefas);
+  };
+
   return (
     <div>
       <Input value={tarefa} onChange={setTarefa} />
@@ -49,7 +55,10 @@ function AddTarefa() {
 
       <ul>
         {tarefas.map((tarefa, index) => (
-          <li key={index}>{tarefa}</li>
+          <li key={index}>
+            {tarefa}
+            <Botao onClick={() => removeTarefa(index)}>Remover</Botao>
+          </li>
         ))}
       </ul>
     </div>
@@ -60,7 +69,7 @@ export default function App() {
   return (
     <div>
       <h1>Lista de Tarefas</h1>
-      <AddTarefa />
+      <ListaDeTarefas />
     </div>
   );
 }
