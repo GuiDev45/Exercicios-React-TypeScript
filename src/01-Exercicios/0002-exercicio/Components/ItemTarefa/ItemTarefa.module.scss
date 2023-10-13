@@ -1,0 +1,21 @@
+.ulContainer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0.95rem;
+}
+
+.itemTarefa {
+  display: flex;
+  align-items: center;
+  width: 36.5rem;
+  height: 3rem;
+
+  list-style: none;
+  color: #fff;
+  background: #379FFF;
+  font-family: SansSerif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  padding-left: 15px;
+}

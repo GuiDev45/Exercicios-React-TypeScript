@@ -13,7 +13,7 @@ import "./Style.css";
 // import App from "./0002-Describing-the-UI/08-Keeping-Components-Pure/App";
 // import App from "./0003-Adding-Interactivity/01-Responding-to-Events/App";
 // import App from "./Thinking-in-React/App";
-import App from "./01-Exercicios/0002-exercicio/App";
+import App from "./01-Exercicios/0002-exercicio/Pages/App";
 // import App from "./Drag-and-Drop/App";
 // import App from "./Formulario-Avancado/App";
 

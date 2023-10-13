@@ -1,40 +1,54 @@
 import { useState } from "react";
 import Botao from "../Botao";
 import Input from "../Input";
+import styles from "./ListaDeTarefas.module.scss";
+import botao from "../Botao/Botao.module.scss";
+import ulContainer from "../ItemTarefa/ItemTarefa.module.scss";
+import ItemTarefa from "../ItemTarefa";
 
 export default function ListaDeTarefas() {
   const [tarefa, setTarefa] = useState("");
   const [tarefas, setTarefas] = useState<string[]>([]);
 
   const handleClick = () => {
-    // Verifique se a tarefa não está vazia antes de adicionar
     if (tarefa.trim() !== "") {
-      // Adicione a tarefa ao array de tarefas
       setTarefas([...tarefas, tarefa]);
-      // Limpe o input após adicionar a tarefa
       setTarefa("");
     }
   };
 
   const removeTarefa = (index: number) => {
-    // Uma nova lista de tarefas que exclui a tarefa no índice atual
     const novaListaTarefas = tarefas.filter((_, i) => i !== index);
     setTarefas(novaListaTarefas);
   };
 
   return (
     <div>
-      <Input value={tarefa} onChange={setTarefa} />
-      <Botao onClick={handleClick}>Adicionar</Botao>
+      <div className={styles.containerInputAdicionar}>
+        <Input value={tarefa} onChange={setTarefa} />
+        <Botao
+          className={`${botao.botaoGeral} ${botao.botaoVerde}`}
+          onClick={handleClick}
+          type="submit"
+        >
+          Adicionar
+        </Botao>
+      </div>
 
-      <ul>
+      <div>
         {tarefas.map((tarefa, index) => (
-          <li key={index}>
-            {tarefa}
-            <Botao onClick={() => removeTarefa(index)}>Remover</Botao>
-          </li>
+          <div className={ulContainer.ulContainer} key={index}>
+            <ItemTarefa tarefa={tarefa} onRemove={() => removeTarefa(index)} />
+            <Botao
+              className={`${botao.botaoGeral} ${botao.botaoVermelho}`}
+              onClick={() => removeTarefa(index)}
+              type="submit"
+            >
+              Remover
+            </Botao>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

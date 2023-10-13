@@ -1,7 +1,9 @@
-export default function Botao({ children, onClick }: TBotao) {
+export default function Botao({ children, onClick, type, className }: TBotao) {
   return (
     <div>
-      <button onClick={onClick}>{children}</button>
+      <button onClick={onClick} type={type} className={className}>
+        {children}
+      </button>
     </div>
   );
 }
